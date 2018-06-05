@@ -1,0 +1,5 @@
+<p>
+  {{question.prompt}}
+</p>
+<input (keyup.enter)="onEnter()" [(ngModel)]="answer">
+<button (click)="continue()">Continue</button>
