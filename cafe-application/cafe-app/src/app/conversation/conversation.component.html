@@ -1,5 +1,7 @@
-<app-interaction></app-interaction>
-<app-results></app-results>
-<app-directions></app-directions>
-<app-error></app-error>
+<section [ngSwitch]="type">
+  <app-interaction *ngSwitchCase="'interaction'" [question]="question" (response)="onResponse($event)"></app-interaction>
+  <app-results *ngSwitchCase="'results'" [answers]="answers"></app-results>
+  <app-error *ngSwitchCase="'error'"></app-error>
+</section>
+
 <button (click)="start()">Start</button>
