@@ -8,10 +8,9 @@ import {ConversationService} from "../conversation.service";
 })
 export class InteractionComponent implements OnInit {
 
-  @Input() question:string;
+  @Input() question:any;
   @Output() response = new EventEmitter<any>();
-
-  count:number = 0;
+  answer:string = '';
 
   constructor(private conservationService: ConversationService) { }
 
@@ -20,12 +19,14 @@ export class InteractionComponent implements OnInit {
 
   continue() {
     console.log('Continue button pressed.');
-    this.count += 1;
-    if (this.count === 1) {
-      this.response.emit({ subject: 'Person', relationship: 'location address', object: 'Muspole Street, Norwich', cf: 100 });
-    } else {
-      this.response.emit({ subject: 'Person', relationship: 'destination address', object: 'Norwich City Football Club, Norwich', cf: 100 });
-    }
+    this.response.emit({ subject: this.question.subject, relationship: this.question.relationship, object: this.answer, cf: 100 });
+    this.answer = '';
+  }
+
+  onEnter() {
+      console.log('Enter key pressed.');
+      this.response.emit({ subject: this.question.subject, relationship: this.question.relationship, object: this.answer, cf: 100 });
+      this.answer = '';
   }
 
 }

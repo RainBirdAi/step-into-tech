@@ -6,11 +6,13 @@ import { ResultsComponent } from './results/results.component';
 import { ErrorComponent } from './error/error.component';
 import { DirectionsComponent } from './directions/directions.component';
 import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   declarations: [
     ConversationComponent,

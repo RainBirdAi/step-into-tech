@@ -9,7 +9,7 @@ import {ConversationService} from "./conversation.service";
 export class ConversationComponent implements OnInit {
 
   type:string;
-  question:string;
+  question:any;
   answers:any[];
 
   constructor(private conservationService: ConversationService) { }
@@ -42,7 +42,7 @@ export class ConversationComponent implements OnInit {
   handleRainbirdResponse(result:any) {
     if (result.question) {
       this.type = 'interaction';
-      this.question = result.question.prompt;
+      this.question = result.question;
     } else {
       this.type = 'results';
       this.answers = result.result;
