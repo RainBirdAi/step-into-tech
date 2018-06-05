@@ -10,6 +10,15 @@ import { DirectionsComponent } from './directions/directions.component';
   imports: [
     CommonModule
   ],
-  declarations: [ConversationComponent, InteractionComponent, ResultsComponent, ErrorComponent, DirectionsComponent]
+  declarations: [
+    ConversationComponent,
+    InteractionComponent,
+    ResultsComponent,
+    ErrorComponent,
+    DirectionsComponent
+  ],
+  exports: [
+    ConversationComponent
+  ]
 })
 export class ConversationModule { }

@@ -2,17 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import {ConversationComponent} from "./conversation/conversation.component";
+import { ConversationModule } from "./conversation/conversation.module";
+import { CoreModule } from "./core/core.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    ConversationComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ConversationModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

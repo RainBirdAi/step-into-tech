@@ -12,8 +12,8 @@ export class ConversationComponent implements OnInit {
   ngOnInit() {
   }
 
-  startClicked(){
-    console.log('clicked');
+  start(){
+    console.log('Start clicked');
   }
 
 }
