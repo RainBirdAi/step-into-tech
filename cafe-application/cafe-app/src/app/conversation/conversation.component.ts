@@ -10,6 +10,7 @@ export class ConversationComponent implements OnInit {
   type:string;
   question:any;
   answers:any[];
+  error:string;
   thinking:boolean = false;
 
   constructor(private conservationService: ConversationService) { }
@@ -54,6 +55,8 @@ export class ConversationComponent implements OnInit {
   handleRainbirdError(error: any) {
     this.thinking = false;
     console.log(JSON.stringify(error));
+    this.type = 'error';
+    this.error = error.message;
   }
 
   activeSession() {
