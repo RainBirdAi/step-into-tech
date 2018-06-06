@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {ConversationService} from "../conversation.service";
+import {InteractionService} from "./interaction.service";
 
 @Component({
   selector: 'app-interaction',
@@ -7,26 +7,45 @@ import {ConversationService} from "../conversation.service";
   styleUrls: ['./interaction.component.css']
 })
 export class InteractionComponent implements OnInit {
-
-  @Input() question:any;
+  @Input() question :any;
+  @Input() thinking :boolean;
   @Output() response = new EventEmitter<any>();
-  answer:string = '';
+  answer: string;
+  places: any;
 
-  constructor(private conservationService: ConversationService) { }
+  constructor(private interactionService: InteractionService) { }
 
   ngOnInit() {
   }
 
+  ngOnChanges() {
+    this.reset();
+  }
+
   continue() {
-    console.log('Continue button pressed.');
-    this.response.emit({ subject: this.question.subject, relationship: this.question.relationship, object: this.answer, cf: 100 });
+    this.response.emit({
+      subject: this.question.subject,
+      relationship: this.question.relationship,
+      object: this.answer,
+      cf: 100
+    });
+    this.reset();
+  }
+
+  onKeyUp(event:any) {
+      if ((this.answer.length > 3) && (event.eventCode !== 13) && (this.answer.length % 2 === 0)){
+        this.interactionService.search(this.answer).subscribe(
+          result => {
+            this.places = result;
+          },
+            error => console.log(JSON.stringify(error)),
+            () => console.log('Search completed')
+        );
+      }
+  }
+
+  reset() {
     this.answer = '';
+    this.places = [];
   }
-
-  onEnter() {
-      console.log('Enter key pressed.');
-      this.response.emit({ subject: this.question.subject, relationship: this.question.relationship, object: this.answer, cf: 100 });
-      this.answer = '';
-  }
-
 }

@@ -1,7 +1,12 @@
+<section>
+  <button (click)="start()">
+    <span *ngIf="activeSession(); else elseBlock">Restart</span>
+    <ng-template #elseBlock><span>Start</span></ng-template>
+  </button>
+</section>
+
 <section [ngSwitch]="type">
-  <app-interaction *ngSwitchCase="'interaction'" [question]="question" (response)="onResponse($event)"></app-interaction>
+  <app-interaction *ngSwitchCase="'interaction'" [question]="question" [thinking]="thinking" (response)="onResponse($event)"></app-interaction>
   <app-results *ngSwitchCase="'results'" [answers]="answers"></app-results>
   <app-error *ngSwitchCase="'error'"></app-error>
 </section>
-
-<button (click)="start()">Start</button>

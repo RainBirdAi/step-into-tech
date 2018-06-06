@@ -39,4 +39,8 @@ export class ConversationService {
     return this.http.post<Object>(`${this.rainbirdAPIUrl}/${this.rainbirdSessionID}/response`, answer);
   }
 
+  activeSession() {
+    return !!this.rainbirdSessionID;
+  }
+
 }
