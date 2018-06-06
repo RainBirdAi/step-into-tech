@@ -11,6 +11,7 @@ export class ConversationComponent implements OnInit {
   type:string;
   question:any;
   answers:any[];
+  error:string;
 
   constructor(private conservationService: ConversationService) { }
 
@@ -51,6 +52,8 @@ export class ConversationComponent implements OnInit {
 
   handleRainbirdError(error: any) {
     console.log(JSON.stringify(error));
+    this.type = 'error';
+    this.error = error.message;
   }
 
 }

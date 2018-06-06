@@ -1,3 +1,23 @@
-<p>
-  {{answers}}
-</p>
+<h2>Rainbird Recommendations</h2>
+<div class="row">
+  <section class="col-sm-4">
+    <div *ngFor="let answer of answers" class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{answer.object}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{answer.certainty}}% Certain</h6>
+        <a target="_blank" href="http://localhost:3051/applications/components/rainbird-analysis-ui/whyAnalysis.html?id={{answer.factID}}?api=http://localhost:3003" class="card-link">Evidence Tree</a>
+        <a target="_blank" (click)="showDirections(answer.object)" class="card-link">Show Directions</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="col-sm-8 directions">
+      <iframe *ngIf="displayMap"
+        width="600"
+        height="450"
+        frameborder="0" style="border:0"
+        [src]="mapLink" allowfullscreen>
+      </iframe>
+  </section>
+</div>
+
