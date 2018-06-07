@@ -5,8 +5,8 @@
       <div class="card-body">
         <h5 class="card-title">{{answer.object}}</h5>
         <h6 class="card-subtitle mb-2 text-muted">{{answer.certainty}}% Certain</h6>
-        <a target="_blank" href="http://localhost:3051/applications/components/rainbird-analysis-ui/whyAnalysis.html?id={{answer.factID}}?api=http://localhost:3003" class="card-link">Evidence Tree</a>
-        <a target="_blank" (click)="showDirections(answer.object)" class="card-link">Show Directions</a>
+        <a target="_blank" href="https://app.rainbird.ai/applications/components/rainbird-analysis-ui/whyAnalysis.html?id={{answer.factID}}?api=https://api.rainbird.ai" class="btn btn-primary card-link">Evidence Tree</a>
+        <a target="_blank" (click)="showDirections(answer.object)" class="btn btn-primary card-link">Show Directions</a>
       </div>
     </div>
   </section>
