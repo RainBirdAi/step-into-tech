@@ -5,8 +5,20 @@
 
 .directions {
   text-align: center;
+  max-height: 400px;
 }
 
-a.card-link, a.card-link:hover {
+a.card-link  {
+  color: white;
+  background-color: #0b3e6f;
+  padding: 7px;
+  display: block;
+  margin: 5px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+a.card-link:hover {
+  background-color: #037EC1;
   color: white;
 }

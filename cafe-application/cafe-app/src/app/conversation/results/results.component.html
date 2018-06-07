@@ -1,22 +1,20 @@
 <h2>Rainbird Recommendations</h2>
 <div class="row">
   <section class="col-sm-4">
-    <div *ngFor="let answer of answers" class="card">
+    <div *ngFor="let answer of answers" class="card" style="width: 18rem;">
       <div class="card-body">
         <h5 class="card-title">{{answer.object}}</h5>
         <h6 class="card-subtitle mb-2 text-muted">{{answer.certainty}}% Certain</h6>
-        <a target="_blank" href="https://app.rainbird.ai/applications/components/rainbird-analysis-ui/whyAnalysis.html?id={{answer.factID}}?api=https://api.rainbird.ai" class="btn btn-primary card-link">Evidence Tree</a>
-        <a target="_blank" (click)="showDirections(answer.object)" class="btn btn-primary card-link">Show Directions</a>
+        <a target="_blank" href="https://app.rainbird.ai/applications/components/rainbird-analysis-ui/whyAnalysis.html?id={{answer.factID}}?api=https://api.rainbird.ai" class="card-link">Evidence Tree</a>
+        <a target="_blank" (click)="showDirections(answer.object)" class="card-link">Show Directions</a>
       </div>
     </div>
   </section>
 
-  <section class="col-sm-8 directions">
+  <section class="col-sm-8 directions embed-responsive embed-responsive-4by3">
       <iframe *ngIf="displayMap"
-        width="600"
-        height="450"
-        frameborder="0" style="border:0"
-        [src]="mapLink" allowfullscreen>
+        class="embed-responsive-item"
+        [src]="mapLink">
       </iframe>
   </section>
 </div>
