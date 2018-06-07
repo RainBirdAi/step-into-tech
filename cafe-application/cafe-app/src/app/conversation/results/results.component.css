@@ -7,3 +7,6 @@
   text-align: center;
 }
 
+a.card-link, a.card-link:hover {
+  color: white;
+}
