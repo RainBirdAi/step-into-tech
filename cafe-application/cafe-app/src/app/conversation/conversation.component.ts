@@ -19,6 +19,7 @@ export class ConversationComponent implements OnInit {
   }
 
   start(){
+    this.thinking = true;
     this.conservationService.start().subscribe(
       result => {
         this.conservationService.query({subject: 'Person', relationship: 'recommended'}).subscribe(

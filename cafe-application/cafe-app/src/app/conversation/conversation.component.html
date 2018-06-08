@@ -1,5 +1,5 @@
-<section>
-  <button (click)="start()">
+<section class="start">
+  <button class="btn btn-outline-secondary btn-sm" (click)="start()">
     <span *ngIf="activeSession(); else elseBlock">Restart</span>
     <ng-template #elseBlock><span>Start</span></ng-template>
   </button>
