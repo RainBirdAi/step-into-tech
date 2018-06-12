@@ -7,9 +7,9 @@ import {map} from "rxjs/operators";
 })
 export class ConversationService {
 
-  rainbirdAPIUrl:string = '';
-  rainbirdAPIKey:string = '';
-  rainbirdKMID:string = '';
+  rainbirdAPIUrl:string = 'https://api.rainbird.ai';
+  rainbirdAPIKey:string = '137397c6-9e0d-4d98-aa59-17889b2610ad';
+  rainbirdKMID:string = 'f2f3148c-0ab8-4404-a322-a80553d76edc';
 
   rainbirdSessionID:string;
 

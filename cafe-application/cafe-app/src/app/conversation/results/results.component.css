@@ -8,17 +8,26 @@
   max-height: 400px;
 }
 
+@media (max-width: 991.98px){
+  .directions {
+    position: fixed;
+    bottom: 0;
+    left:0;
+  }
+}
+
 a.card-link  {
   color: white;
-  background-color: #0b3e6f;
-  padding: 7px;
-  display: block;
-  margin: 5px;
+  background-color: #17a2b8;
+  padding: 10px;
+  display: inline-block;
+  margin: 2px;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 5px;
+  font-size: 0.8em;
 }
 
 a.card-link:hover {
-  background-color: #037EC1;
+  background-color: #1a6672;
   color: white;
 }

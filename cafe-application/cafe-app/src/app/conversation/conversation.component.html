@@ -1,9 +1,11 @@
 <section>
-  <button (click)="start()">
+  <button class="btn btn-outline-info" (click)="start()">
     <span *ngIf="activeSession(); else elseBlock">Restart</span>
     <ng-template #elseBlock><span>Start</span></ng-template>
   </button>
 </section>
+
+<hr>
 
 <section [ngSwitch]="type">
   <app-interaction *ngSwitchCase="'interaction'" [question]="question" [thinking]="thinking" (response)="onResponse($event)"></app-interaction>
