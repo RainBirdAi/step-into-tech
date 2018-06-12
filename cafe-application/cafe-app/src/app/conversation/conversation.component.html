@@ -1,5 +1,6 @@
-<section>
-  <button class="btn btn-outline-info" (click)="start()">
+
+<section class="start">
+  <button class="btn btn-outline-info btn-sm" (click)="start()">
     <span *ngIf="activeSession(); else elseBlock">Restart</span>
     <ng-template #elseBlock><span>Start</span></ng-template>
   </button>
