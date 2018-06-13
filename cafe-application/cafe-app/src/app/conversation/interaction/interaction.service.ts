@@ -6,7 +6,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 })
 export class InteractionService {
 
-  placesAutocompleteAPIUrl:string = 'http://places.rainbird.technology/search?location=';
+  placesAutocompleteAPIUrl:string = 'https://places.rainbird.technology/search?location=';
 
   constructor(private http: HttpClient) {}
 
