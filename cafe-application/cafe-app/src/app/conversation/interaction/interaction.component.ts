@@ -9,6 +9,7 @@ import {InteractionService} from "./interaction.service";
 export class InteractionComponent implements OnInit {
   @Input() question :any;
   @Input() thinking :boolean;
+  @Input() acquiringGPS :boolean;
   @Output() response = new EventEmitter<any>();
   answer: string;
   places: any;

@@ -1,8 +1,11 @@
 <section class="interaction">
-  <section class="alert alert-info" role="alert" *ngIf="thinking; else elseBlock">
+  <section class="alert alert-info" role="alert" *ngIf="thinking">
     Rainbird is thinking....
   </section>
-  <ng-template #elseBlock>
+  <section class="alert alert-success" role="alert" *ngIf="acquiringGPS">
+    Acquiring GPS location....
+  </section>
+  <section *ngIf="!thinking && !acquiringGPS">
     <label for="question">{{question.prompt}}</label>
     <div class="input-group mb-3">
       <input type="text" class="form-control" id="question" placeholder="Enter location" (keyup.enter)="continue()" (keyup)="onKeyUp($event)" [(ngModel)]="answer">
@@ -17,5 +20,5 @@
         </mat-radio-button>
       </mat-radio-group>
     </section>
-  </ng-template>
+  </section>
 </section>

@@ -1,3 +1,7 @@
+<section class="alert alert-danger" role="alert" *ngIf="answers.length === 0">
+    Oh no, Rainbird can't recommended any Cafe's on your route.
+</section>
+
 <div class="row">
   <section class="col-12 col-lg-4">
     <div *ngFor="let answer of answers" class="card">
@@ -17,4 +21,3 @@
       </iframe>
   </section>
 </div>
-
