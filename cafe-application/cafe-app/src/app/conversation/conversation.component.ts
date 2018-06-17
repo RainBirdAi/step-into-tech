@@ -12,24 +12,43 @@ export class ConversationComponent implements OnInit {
   answers:any[];
   error:string;
   thinking:boolean = false;
+  acquiringGPS:boolean = false;
+  location:any;
 
   constructor(private conservationService: ConversationService) { }
 
   ngOnInit() {
   }
 
-  start(){
+  start() {
+    this.type = 'interaction';
+    this.startInteraction();
+  }
+
+  startInteraction(){
     this.thinking = true;
     this.conservationService.start().subscribe(
       result => {
-        this.conservationService.query({subject: 'Person', relationship: 'recommended'}).subscribe(
-          this.handleRainbirdResponse.bind(this),
-          this.handleRainbirdError.bind(this),
-          () => console.log('Query complete.')
-        );
+        if (this.location) {
+          this.conservationService.inject([{subject: 'Person', relationship: 'start latlng', object: this.location.coords.latitude + ',' + this.location.coords.longitude }]).subscribe(
+            this.performQuery.bind(this),
+            this.handleRainbirdError.bind(this),
+            () => console.log('Inject complete.')
+          );
+        } else {
+          this.performQuery();
+        }
       },
       this.handleRainbirdError.bind(this),
       () => console.log('Start complete.')
+    );
+  }
+
+  performQuery() {
+    this.conservationService.query({subject: 'Person', relationship: 'recommended'}).subscribe(
+      this.handleRainbirdResponse.bind(this),
+      this.handleRainbirdError.bind(this),
+      () => console.log('Query complete.')
     );
   }
 
