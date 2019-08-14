@@ -48,7 +48,7 @@ export class ConversationComponent implements OnInit {
             () => console.log('Inject complete.')
           );
         } else {
-            this.performQuery();
+          this.performQuery();
         }
       },
       this.handleRainbirdError.bind(this),

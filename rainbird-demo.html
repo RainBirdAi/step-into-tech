@@ -38,16 +38,16 @@
 	<section class="left">
 
 		<h2>Aim</h2>
-		<p>The aim of this section is to get you familiar with the Rainbird scenario which we are using for this project.</p>
+		<p>The aim of this section is to get you familiar with the Rainbird scenario which we are using today.</p>
 		<p>By the end you should understand what Rainbird is doing as well as having seen two of the interfaces Rainbird provides.</p>
-		<p>If you are unsure of how to complete any of the tasks please ask us or a friend.</p>
+		<p>If you are unsure of how to complete any of the tasks please ask.</p>
 		<h2>Instructions</h2>
 		<div>
 			<h3>Step 1</h3>
 			<p>Edit this html file using Visual Studio. </p>
 			<p>Add an iframe to the code using the following information:</p>
 			<ul>
-				<li>src attribute: https://app.rainbird.ai/agent/7fa42734-3586-4777-9779-bfbba84141ab</li>
+				<li>src attribute: https://app.rainbird.ai:443/agent/4fb4c8d2-6cdf-41a4-aecb-555bb0d78f60</li>
 				<li>width attribute: 500</li>
 				<li>height attribute: 600</li>
 			</ul>
@@ -58,40 +58,16 @@
 			<h3>Step 2</h3>
 			<p>Refresh the html file in your browser to see a Rainbird interface.</p>
 			<p>(Please ask if you don't see any changes).</p>
-			<p>Run through the Rainbird interaction by first selecting the 'BLAH BLAH' query. Answer any questions Rainbird asks you.</p>
+			<p>Run through the Rainbird interaction by first selecting the 'Recommend a Cafe' query. Answer any questions Rainbird asks you.</p>
 			<p>Rainbird will recommend you some cafes you could visit.</p>
-			<p>Copy and Paste the cafe name here if you like, or just remember it: </p>
-			<textarea rows="4" cols="70"></textarea>
-			<p>Behind the scenes Rainbird has taken the answers you gave to obtain your direction of travel (bearing) and used other information such as Google Star Ratings and Food Hygine scores to produce a list of recommended cafes.</p>
+			<p>Have a look at the Evidence Tree by clicking the 'i' icon. This will show you how Rainbird has made its decision.</p>
+			<p>Behind the scenes Rainbird has taken the answers you gave to obtain your direction of travel (bearing) and used other information such as Google Star Ratings and Food Hygiene scores to produce a list of recommended cafes.</p>
 		</div>
 		<div>
 			<h3>Step 3</h3>
-			<p>Run the Rainbird interaction by selecting the 'BLAH BLAH' query.</p>
-			<p>Rainbird will generate you a Google Maps link showing how to get to your chosen cafe.</p>
-			<p>Once the interaction is complete, open a new browser tab and copy and paste in the result URL.</p>
-		</div>
-		<div>
-			<h3>Step 4</h3>
-			<p>Did you notice that we had to tell Rainbird the two pieces of location information when we ran our second query?</p>
-			<p>In fact Rainbird has the ability to remember certain pieces of information, but we have to tell it that this is how we'd like it to behave.</p>
-			<p>Change the src attribute of the iframe you added and add a query string to the end of the url.</p>
-			<p>The query string should have the parameter name contextid and the value should be something unique to you e.g. your name followed by your favorite colour and favorite number.</p>
-			<p>e.g. contextid=craig-orange-13</p>
-			<p>You may find this webpage useful: <a target="_blank" href="https://mixpanel.com/blog/2014/10/16/community-tip-adding-properties-into-the-url/">https://mixpanel.com/blog/2014/10/16/community-tip-adding-properties-into-the-url/</a> (see What is a query string?)</p>
-		</div>
-		<div>
-			<h3>Step 5</h3>
-			<p>Refresh the page and run the 'BLAH BLAH query again.'</p>
-			<p>Choose a cafe as you did before, remmeber it or paste it here: </p>
-			<textarea rows="4" cols="70"></textarea>
-			<p>Now run the 'BLAH BLAH' query.</p>
-			<p>This time you shouldn't have had to tell Rainbird your location information. It has remebered those details.</p>
-		</div>
-		<div>
-			<h3>Step 6</h3>
 			<p>The interface you have used so far to interact with Rainbird is just one option.</p>
-			<p>To see another sytle of interface update the iframe you added replace '/agent/' with '/chatagent/' in the url used as the src attribute.</p>
-			<p>Refresh the page to reload the html and feel free to run the queries again if you like.</p>
+			<p>To see another style of interface update the iframe you added replace '/agent/' with '/chatagent/' in the url used as the src attribute.</p>
+			<p>Refresh the page to reload the html and feel free to run the query again if you like.</p>
 		</div>
 		<div>
 			<h3>Finished</h3>
@@ -99,8 +75,5 @@
 			<p>Next we will take a look at a larger project using Rainbird.</p>
 		</div>
 	</section>
-
-	
-
 </body>
 </html>
