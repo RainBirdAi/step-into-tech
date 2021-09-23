@@ -10,6 +10,7 @@ export class ConversationComponent implements OnInit {
   type:string;
   question:any;
   answers:any[];
+  sessionID:string;
   error:any;
   thinking:boolean = false;
   acquiringGPS:boolean = false;
@@ -81,6 +82,7 @@ export class ConversationComponent implements OnInit {
     } else {
       this.type = 'results';
       this.answers = result.result;
+      this.sessionID = result.sid;
     }
   }
 

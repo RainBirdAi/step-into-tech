@@ -9,6 +9,7 @@ import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
 })
 export class ResultsComponent implements OnInit {
 
+  @Input() sessionID:string;
   @Input() answers:any[];
   displayMap = false;
   mapLink: SafeResourceUrl;
